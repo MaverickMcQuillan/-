@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.49">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; 多元函数的微分学 – Fenxi</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./多元函数的微分学.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">多元函数的微分学</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Fenxi</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./多元函数的微分学.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">多元函数的微分学</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#偏导数与全微分" id="toc-偏导数与全微分" class="nav-link active" data-scroll-target="#偏导数与全微分"><span class="header-section-number">2.1</span> 偏导数与全微分</a>
+  <ul class="collapse">
+  <li><a href="#偏导数" id="toc-偏导数" class="nav-link" data-scroll-target="#偏导数"><span class="header-section-number">2.1.1</span> 偏导数</a></li>
+  <li><a href="#方向导数" id="toc-方向导数" class="nav-link" data-scroll-target="#方向导数"><span class="header-section-number">2.1.2</span> 方向导数</a></li>
+  <li><a href="#全微分" id="toc-全微分" class="nav-link" data-scroll-target="#全微分"><span class="header-section-number">2.1.3</span> 全微分</a></li>
+  <li><a href="#多元函数各个概念的关系" id="toc-多元函数各个概念的关系" class="nav-link" data-scroll-target="#多元函数各个概念的关系"><span class="header-section-number">2.1.4</span> 多元函数各个概念的关系</a></li>
+  <li><a href="#梯度" id="toc-梯度" class="nav-link" data-scroll-target="#梯度"><span class="header-section-number">2.1.5</span> 梯度</a></li>
+  <li><a href="#高阶偏导数" id="toc-高阶偏导数" class="nav-link" data-scroll-target="#高阶偏导数"><span class="header-section-number">2.1.6</span> 高阶偏导数</a></li>
+  <li><a href="#高阶微分" id="toc-高阶微分" class="nav-link" data-scroll-target="#高阶微分"><span class="header-section-number">2.1.7</span> 高阶微分</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">多元函数的微分学</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="偏导数与全微分" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="偏导数与全微分"><span class="header-section-number">2.1</span> 偏导数与全微分</h2>
+<p>这节课的结构跟我们之前学习的一元函数特别的相似，再加上我之前学过高等数学，所以学这节课相对于初学者来讲要容易的多。但即使这样，我也是花了<strong>14个小时</strong>才把它啃下来，所以从侧面可以看出数学分析的学习是多么得不容易。</p>
+<p>我们首先回忆一下数学分析（陈纪修第三版）上册学习的内容，针对一元函数，我们首先学习什么是极限，然后提出闭区间套定理、Cauchy收敛原理等收敛准则，然后开始定义什么什么是极限，之后提出导数、微分、积分、不定积分、级数等，那么多元函数和向量值函数也是按照一元函数的结构搭建起来，所以我总说这本书从第十一章开始，就是开始新的轮回，准确的说就是将一元函数的性质拓展到Euclid空间上。</p>
+<section id="偏导数" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="偏导数"><span class="header-section-number">2.1.1</span> 偏导数</h3>
+<p>对于一个多元函数，我们关心的是其各个自变量的变化能在多大程度上影响因变量的变化。为了研究方便，首先应该采取控制变量法，关注在一个点上只有一个变量变化，其他的变量都不变，会导致函数值有哪些改变？或者改变的幅度有多大？</p>
+<p>当只考虑一个变量对函数值的影响时，完全可以把其它无关的变量看成常数，这样多元函数就变成了一元函数，那么所研究的变量的变化所导致函数值的变化就可以通过把多元函数当成一元函数对变量的求导来得出那个点上的变化率。这就是偏导数的定义，为什么叫偏导数？就是因为多元函数的变量很多，但是当我们只关心其中一个变量对函数值的影响时，只需要把多元函数针对这个变量去求导，所以就有所偏颇，于是我们称为偏导数。</p>
+<p>如果一个多元函数针对某个区域的每个点，每个变量都可以求偏导，则称它在这个区域是可导的。</p>
+</section>
+<section id="方向导数" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="方向导数"><span class="header-section-number">2.1.2</span> 方向导数</h3>
+<p>对于一个二元函数来讲，偏导数的几何意义是在某点处沿着x轴或y轴的方向变化时函数值的变化率。那么我们自然还想知道除了x轴、y轴两个方向之外，其它方向的变化率。这该如何解决呢？</p>
+<p>首先来看看，偏导数在数学语言上的定义：</p>
+<p><span class="math display">\[
+\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x, y_0)-f(x_0,y_0)}{\Delta x}
+\]</span></p>
+<p>通过这个定义，我们可以看出偏导数其实就是在函数值变化除以x坐标的变化。类似的，对于其它方向的变化，我们也可以定义为由于在这个方向上的变化而导致的函数值的变化除以在这个方向上变化的距离，但略微有一个点不同，我们来看一下数学语言的定义：</p>
+<p><span class="math display">\[
+\lim_{t \to 0^{+}} \frac{f(x_0+tcos\alpha，y_0+tsin\alpha)- f(x_0,y_0)}{t}
+\]</span></p>
+<p>既然是方向导数，我们必须要用向量来表示方向，怎么表示？实际上可以用任何一个这个方向上的向量来表示，但是我们习惯还是用单位向量来表示，即 <span class="math inline">\(\displaystyle \mathbf{v} = (cos\alpha,sin\alpha)\)</span>,这样任意一个这个方向的向量都可以表示为 <span class="math inline">\(\displaystyle \mathbf{v} = (tcos\alpha,tsin\alpha)\)</span>,这个向量的长度很显然就是 $t(t&gt;0) $,t越小，向量的长度越小。那么从定义来看，在几何意义上就是，根据所给的向量方向，通过方向移动极其微小的值能对整体的函数值产生多大的变化。这里注意一下，如果在定义域的某个点给定一个向量，当所有坐标想这个向量指定的方向极其微小的变动时，其对函数值的影响就是方向导数的值。在此基础上，我们再看看跟这个向量方向相反的向量的方向导数会有什么变化？</p>
+<p><span class="math display">\[
+\lim_{t \to 0^{+}} \frac{f(x_0-tcos\alpha，y_0-tsin\alpha)- f(x_0,y_0)}{t} = \lim_{t \to 0^{-}} \frac{f(x_0+tcos\alpha，y_0+tsin\alpha)- f(x_0,y_0)}{-t}
+\]</span></p>
+<p>如果我们只在以向量方向的角度去看这个多元函数时，我们会发现，它可能会变成下面的图像：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./picture/12/121.png" class="img-fluid figure-img"></p>
+<figcaption>两个相反方向移动对函数值的影响</figcaption>
+</figure>
+</div>
+<p>当按照方向向量给的方向去截取多元函数的平面，就会得到一个一元函数的图像，其中x轴是是方向向量的大小变化，y轴显示的是多元函数值。如果对应的一元函数在该点处，不可导。那么我们就会得到其左右的导数极限不一样，也就意味着多元函数在这个向量的正反两个方向的方向导数不一样，所以方向导数很看重方向二字，如果方向不一样（相反也不行）就会造成方向导数的值产生很大差别。</p>
+<p>那么对于偏导数来讲，通过数学符号的定义可以看到。无论是从x轴的正方向移动还是负方向移动，函数值的变化量与x轴的变化量之比都是不变的。如果从一元函数的角度来看，图像在这点处是可导的，也就意味着斜率不变。如果在这点处，从x轴正负两个方向上去求方向导数，我们可以发现它们是两个相反数。这是因为在方向导数的几何意义中，所得到的数值是函数在这个点处按照这个方向前进非常微弱的距离会造成函数值多大比例的变化（无论哪个方向，这个前进的距离都是正的）。对于偏导数来讲，其几何意义为在某个点处按照x或y轴方向微弱移动（这个移动有正有负）对函数值变化的影响，假设多元函数在某个点可偏导，且偏导数为正，那么在很小的范围内，朝着x或y轴正向移动，函数值变化值为正，负向移动，函数值变化值为负，这样函数值变化量与距离的变化量比值是一定的。但是对于方向导数来讲，向x或y轴正向移动，函数值变化值为正，这没有问题，如果朝着x或y轴的负方向移动，函数值的变化量为负，这也没有问题。可是，最终方向导数计算的数值是函数变化值与移动距离的比值，这个移动距离在偏导数中有方向，而在方向导数中永远为正的，所以这就导致了用方向导数去计算x或y轴的变化率时，会得到两个相反数。</p>
+<p>总结来讲，如果一个多元函数在某点的偏导数不存在，不意味着在这点处对应的两个方向导数不存在；如果偏导数存在，那么对应的两个方向导数的数值一定互为相反数。</p>
+</section>
+<section id="全微分" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="全微分"><span class="header-section-number">2.1.3</span> 全微分</h3>
+<p>讲完导数之后，我们就要看多元函数的微分了，跟一元函数类似，如果在某点多元函数函数值的变化量能写成如下形式：</p>
+<p><span class="math display">\[
+\Delta z = A\Delta x + B\Delta y + o(\sqrt{(\Delta x)^2+(\Delta y)^2})
+\]</span></p>
+<p>其中的A和B跟 <span class="math inline">\(\displaystyle \Delta x 与 \Delta y\)</span> 的变化没有关系。可以发现当 <span class="math inline">\(\displaystyle \Delta x \rightarrow 0 和 \Delta y \rightarrow 0\)</span> 时，<span class="math inline">\(\displaystyle \Delta z \rightarrow 0\)</span>, 那么 <span class="math inline">\(\Delta y = 0, \Delta x \rightarrow 0\)</span> 时，<span class="math inline">\(\displaystyle A = \frac{\Delta z}{\Delta x}\)</span>，同样可以得到 <span class="math inline">\(\displaystyle B = \frac{\Delta z}{\Delta y}\)</span>。</p>
+<p>如果一个多元函数可以微分的话，它便可以写成以下的形式：</p>
+<p><span class="math display">\[
+dz = f_xdx + f_ydy
+\]</span></p>
+</section>
+<section id="多元函数各个概念的关系" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="多元函数各个概念的关系"><span class="header-section-number">2.1.4</span> 多元函数各个概念的关系</h3>
+<p>现在我们已经介绍了多元函数的极限、连续、偏导、方向导数、微分的定义，现在我们要看看它们之间的联系了。</p>
+<section id="偏导与连续的关系" class="level4" data-number="2.1.4.1">
+<h4 data-number="2.1.4.1" class="anchored" data-anchor-id="偏导与连续的关系"><span class="header-section-number">2.1.4.1</span> 偏导与连续的关系</h4>
+<p>如果多元函数在某点可偏导，它会连续吗？答案是不一定。因为对于一个二元函数来讲，如果对x和y偏导都成立的话，只能说明在x、y轴方向逼近某点时，其极限等于该点的函数值。但是如果这点能被称得上是连续的话，必须各个方向逼近这个点的极限都一样且等于该点的函数值。那么如果连续能推出来可偏导吗？答案也是未必。比说说对于 <span class="math inline">\(\displaystyle f(x,y) = |x|\)</span>,在 <span class="math inline">\(\displaystyle (0,0)\)</span> 处从x轴左面趋于零和从右边趋于零与跟 <span class="math inline">\(\displaystyle \Delta x\)</span> 的比值不一样，所以即使这个多元函数在 <span class="math inline">\(\displaystyle (0,0)\)</span> 连续，也不能保证其在该点可偏导。</p>
+</section>
+<section id="偏导与方向导数的关系" class="level4" data-number="2.1.4.2">
+<h4 data-number="2.1.4.2" class="anchored" data-anchor-id="偏导与方向导数的关系"><span class="header-section-number">2.1.4.2</span> 偏导与方向导数的关系</h4>
+<p>偏导数从几何意义上来讲只是说从x或y轴方向上逼近与某个点时，函数值的变化量与坐标的变化量的比值的变化。而方向导数意味着坐标沿着任意一个方向的的变化所导致的函数值的变化。如果偏导存在的话，其对应的两个相反方向的方向导数一定存在，并且数值相反。如果xy轴的正负两个方向的方向导数不为相反数，则该点的偏导数是不存在。而该点的所有向量的偏导数存在，并不意味着其他方向的方向导数存在。</p>
+</section>
+<section id="方向导数与连续的关系" class="level4" data-number="2.1.4.3">
+<h4 data-number="2.1.4.3" class="anchored" data-anchor-id="方向导数与连续的关系"><span class="header-section-number">2.1.4.3</span> 方向导数与连续的关系</h4>
+<p>如果某点的所有方向的方向导数都存在，那么意味着所有方向趋近与这个点的函数值的极限都是该点出的函数值，可以说是连续的。但如果在该点处连续，我们不能推导出函数值的变化量与离该点的距离之比的极限存在。</p>
+</section>
+<section id="全微分与其他概念的关系" class="level4" data-number="2.1.4.4">
+<h4 data-number="2.1.4.4" class="anchored" data-anchor-id="全微分与其他概念的关系"><span class="header-section-number">2.1.4.4</span> 全微分与其他概念的关系</h4>
+<p>首先通过这本书的一个例题，我们可以看出，即使多元函数满足连续、偏导存在、方向导数存在也不能推导出全微分的存在。</p>
+<p>如果全微分存在，多元函数在该点肯定连续，偏导数也肯定存在，而且任意一个方的方向导数也存在。</p>
+<p>如果全微分存在，则以 <span class="math inline">\(\displaystyle \mathbf{v} = (cos\alpha, sin\alpha)\)</span> z作为方向的方向导数为</p>
+<p><span class="math display">\[
+\frac{\partial f}{\partial \mathbf{v}} =  \frac{\partial f}{\partial x} \cos \alpha + \frac{\partial f}{\partial y} sin\alpha
+\]</span></p>
+<p>我们在此做一个总结：</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD;
+    A[全微分]--&gt;B[偏导数];
+    A--&gt;C[方向导数];
+    A--&gt;D[连续];
+    C--&gt;|x或y轴正反两个方向的方向导数相反|B;
+    B--&gt;|偏导数在某点连续|A;
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="梯度" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="梯度"><span class="header-section-number">2.1.5</span> 梯度</h3>
+<p>梯度的定义是多元函数在某点处所有的偏导数构成的<strong>向量</strong>。对一个二元函数来讲，其在某点的梯度为</p>
+<p><span class="math display">\[
+\mathbf{grad f} = (f_x,f_y)
+\]</span></p>
+<p>这里为什么要单独把梯度这个概念拿出来？主要是因为它的几何含义非常重要。针对多元函数在空间中固定一点的所有方向中，梯度这个方向是对函数值变化影响最大的方向。为什么呢？</p>
+<p>我们知道如果一点出可微，那么在那点出对应的任意一个方向的方向导数为：</p>
+<p><span class="math display">\[
+\frac{\partial f}{\partial \mathbf{v}} =  \frac{\partial f}{\partial x} \cos \alpha + \frac{\partial f}{\partial y} sin\alpha = &lt;(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y} ),(\cos \alpha,\sin\alpha)&gt; = ||\mathbf{grad f}|| * ||\mathbf{v}|| * \cos &lt;\mathbf{grad f},\mathbf{v} &gt;
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle \mathbf{v}\)</span> 为方向单位向量。</p>
+<p>从表达式中我们可以看出来，在该点可微的条件下，任意一个方向的方向导数不会超过 <span class="math inline">\(\displaystyle ||\mathbf{grad f}||\)</span>,当该点朝着梯度的方向是函数值增长最大的时候，当朝着梯度的反方向移动时是增长最小的时候。很显然，梯度这个概念在物理中应该是被大量应用的，尤其是在深度学习的学习中，我们非常好奇在某一点时，朝着哪些方向是使函数值变化最剧烈的方向。</p>
+<p>梯度还是一种运算，特别类似于导数的求导。但是它的结果是一个向量，不是一个数，具体计算准则这里就不谈了。</p>
+</section>
+<section id="高阶偏导数" class="level3" data-number="2.1.6">
+<h3 data-number="2.1.6" class="anchored" data-anchor-id="高阶偏导数"><span class="header-section-number">2.1.6</span> 高阶偏导数</h3>
+<p>当对一个多元函数求偏导后，我们得到一个偏导数，记住这个偏导数仍然是一个多元函数，既然是多元函数，它就有求偏导的可能性，如果它可以去在定义域内求偏导的话，我们又会得到一个偏导函数，那么这个偏导函数对于之前的原函数来讲，就是它的二阶偏导数，我们把二阶及其以上的偏导数成为高阶偏导数。</p>
+<p>比如对于一个二元函数来讲，先对x求偏导在对y求偏导和先对y求偏导在对x求偏导得出的 <span class="math inline">\(\displaystyle f_{xy} 和 f_{yx}\)</span>,这两个二阶偏导函数一般在一点的函数值可能是不相等的，如果相等的话，必须要满足一个条件就是： <span class="math inline">\(\displaystyle f_{xy} 和 f_{yx}\)</span>在该点处连续。</p>
+</section>
+<section id="高阶微分" class="level3" data-number="2.1.7">
+<h3 data-number="2.1.7" class="anchored" data-anchor-id="高阶微分"><span class="header-section-number">2.1.7</span> 高阶微分</h3>
+<p>如果一个多元函数可微的话，它能写成如下的形式：</p>
+<p><span class="math display">\[
+dz = f_{x}dx + f_{y}dy
+\]</span></p>
+<p>这里的 <span class="math inline">\(\displaystyle dz\)</span> 指的是因为 <span class="math inline">\(\displaystyle x和y\)</span> 的极其微小的变化量而导致的函数值的极其微小的变化量，我们发现它不仅与 <span class="math inline">\(\displaystyle dx和dz\)</span> 有关，也与 <span class="math inline">\(x和y\)</span> 的坐标有关，那我们也可以把 <span class="math inline">\(\displaystyle dz\)</span> 看成一个多元函数，那么这个多元函数又可以去可微（如果能可微的话），现在我们要对其进行可微操作：</p>
+<p><span class="math display">\[
+\begin{align}
+d(dz) &amp;= \frac{\partial(dz)}{\partial x}dx + \frac{\partial(dz)}{\partial y}dy \\
+d^2z  &amp;= \frac{\partial(f_x)}{\partial x}dx^2 + \frac{\partial(f_y)}{\partial x}dxdy+\frac{\partial(f_x)}{\partial y}dxdy+\frac{\partial(f_y)}{\partial y}dy^2 \\
+      &amp;= f_{xx}dx^2 + 2f_{xy}dxdy + f_{yy}dy^2（两个二阶偏导要在该点连续）
+\end{align}
+\]</span></p>
+<p>有一个非常有意思的地方就是，这里又定义了一下运算符号，跟我们之前学的平方、乘法什么的有所区别：</p>
+<p><span class="math display">\[
+(\frac{\partial}{\partial x})^2 = \frac{\partial^2}{\partial x^2}, (\frac{\partial }{\partial x})(\frac{\partial}{\partial y}) = \frac{\partial^2}{\partial x \partial y}, (\frac{\partial}{\partial y})^2 = \frac{\partial ^2}{\partial y^2}
+\]</span></p>
+<p>这里两个偏导的乘法是指先对前面的自变量偏导再对后面的自变量偏导，而不是指两个偏导相乘得到的函数。所以二阶的全微分，我们可以写成以下的形式：</p>
+<p><span class="math display">\[
+d^2 z = (\frac{\partial}{\partial x}dx + \frac{\partial}{\partial y}dy)^2z
+\]</span></p>
+<p>同样，按照数学归纳法我们可以得到，所有阶的全微分表达公式：</p>
+<p><span class="math display">\[
+d^k z = (\frac{\partial}{\partial x}dx + \frac{\partial}{\partial y}dy)^k z \;\;\; (k = 1, 2, 3, ...)
+\]</span></p>
+<p>推广到n元函数，我们可以得到其k阶全微分的表达式：</p>
+<p><span class="math display">\[
+d^k u = (\frac{\partial}{\partial x_1}dx_1 + \frac{\partial}{\partial x_2}dx_2 + \cdots + \frac{\partial}{\partial x_n}dx_n)^k u  \; \; \;  (k=1,2,\cdots)
+\]</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

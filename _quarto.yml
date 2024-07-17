@@ -1,0 +1,24 @@
+project:
+  type: book
+  output-dir: docs
+book:
+  title: "Fenxi"
+  author: "Norah Jones"
+  date: "2024/7/11"
+  chapters:
+    - index.qmd
+    - part: "多元函数的微分学"
+    - 偏导数与全微分.qmd
+    - 多元复合函数的求导法则.qmd
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
